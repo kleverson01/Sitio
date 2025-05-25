@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sítio Vovó Esperança - Teste Offline</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            /* --- FOTO DE FUNDO --- */
+            /* Coloque sua foto de fundo na pasta 'images' (ex: 'fundo_principal.jpg') e ajuste o nome abaixo */
+            background-image: url("images/fundo_principal.jpg"); /* << VOCÊ PRECISA ADICIONAR UMA IMAGEM DE FUNDO AQUI */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #333;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            min-height: 100vh;
+            padding-bottom: 20px;
+        }
+        .container {
+            max-width: 950px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: rgba(76, 175, 80, 0.8);
+            color: #fff;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        header h1 { margin: 0; font-size: 2.8em; }
+        h2 {
+            color: #2e7d32;
+            border-bottom: 2px solid #a5d6a7;
+            padding-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        section { margin-bottom: 35px; }
+        .features-list {
+            list-style: none; padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .features-list li {
+            background-color: #f9f9f9; padding: 12px 15px;
+            border-radius: 5px; border-left: 4px solid #4CAF50;
+        }
+        .features-list li::before { content: "✓ "; color: #4CAF50; font-weight: bold; margin-right: 8px; }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .gallery .photo-container {
+            border: 1px solid #ddd; border-radius: 6px;
+            padding: 8px; background-color: #fff;
+            text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .gallery img {
+            width: 100%; height: 180px;
+            object-fit: cover; border-radius: 4px;
+            margin-bottom: 8px;
+        }
+        .gallery .caption { font-size: 0.9em; color: #555; }
+        .contact-info p, .location-info p { font-size: 1.1em; margin-bottom: 10px; }
+        .contact-info strong, .location-info strong { color: #2e7d32; }
+        .whatsapp-link {
+            display: inline-block; background-color: #25D366;
+            color: white; padding: 12px 20px;
+            text-decoration: none; border-radius: 25px;
+            font-weight: bold; margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .whatsapp-link:hover { background-color: #1EBE57; }
+        .map-container {
+            position: relative; overflow: hidden;
+            padding-top: 56.25%; border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+        .map-container iframe {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%; border: 0;
+        }
+        footer {
+            text-align: center; margin-top: 30px; padding: 20px;
+            background-color: rgba(0,0,0,0.7); color: #f1f1f1;
+            border-radius: 8px;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.2em; }
+            .container { margin: 10px; padding: 15px; }
+            .features-list, .gallery { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <div class="container">
+            <header>
+                <h1>Sítio Vovó Esperança</h1>
+            </header>
+
+            <section id="sobre">
+                <h2>Bem-vindo ao Paraíso das Festas!</h2>
+                <p>O Sítio Vovó Esperança é o local perfeito para celebrar seus momentos mais especiais. Com uma estrutura completa e um ambiente acolhedor, garantimos uma experiência inesquecível para você e seus convidados.</p>
+            </section>
+
+            <section id="caracteristicas">
+                <h2>Nossas Comodidades</h2>
+                <ul class="features-list">
+                    <li>06 Quartos confortáveis</li>
+                    <li>06 Banheiros (incluindo suítes)</li>
+                    <li>Área de churrasco completa</li>
+                    <li>02 Cozinhas equipadas</li>
+                    <li>Área kids e playground</li>
+                    <li>Casinha de boneca em tamanho real</li>
+                    <li>Piscina grande para adultos</li>
+                    <li>Piscina infantil separada</li>
+                    <li>Casa aconchegante e bem estruturada</li>
+                    <li>Quadra de peteca</li>
+                    <li>Campo de futebol</li>
+                    <li>Pequeno e charmoso pomar</li>
+                </ul>
+            </section>
+
+            <section id="galeria">
+                <h2>Conheça Nosso Espaço</h2>
+                <div class="gallery">
+                    <div class="photo-container">
+                        <img src="images/foto(1).jpg" alt="Foto 1 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 1</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(2).jpg" alt="Foto 2 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 2</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(3).jpg" alt="Foto 3 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 3</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(4).jpg" alt="Foto 4 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 4</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(5).jpg" alt="Foto 5 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 5</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(6).jpg" alt="Foto 6 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 6</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(7).jpg" alt="Foto 7 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 7</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(8).jpg" alt="Foto 8 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 8</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(9).jpg" alt="Foto 9 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 9</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(10).jpg" alt="Foto 10 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 10</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(11).jpg" alt="Foto 11 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 11</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(12).jpg" alt="Foto 12 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 12</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(13).jpg" alt="Foto 13 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 13</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(14).jpg" alt="Foto 14 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 14</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(15).jpg" alt="Foto 15 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 15</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(16).jpg" alt="Foto 16 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 16</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(17).jpg" alt="Foto 17 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 17</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(18).jpg" alt="Foto 18 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 18</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(19).jpg" alt="Foto 19 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 19</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(20).jpg" alt="Foto 20 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 20</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(21).jpg" alt="Foto 21 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 21</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(22).jpg" alt="Foto 22 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 22</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(23).jpg" alt="Foto 23 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 23</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(24).jpg" alt="Foto 24 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 24</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(25).jpg" alt="Foto 25 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 25</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(26).jpg" alt="Foto 26 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 26</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(27).jpg" alt="Foto 27 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 27</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(28).jpg" alt="Foto 28 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 28</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(29).jpg" alt="Foto 29 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 29</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(30).jpg" alt="Foto 30 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 30</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(31).jpg" alt="Foto 31 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 31</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(32).jpg" alt="Foto 32 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 32</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(33).jpg" alt="Foto 33 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 33</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(34).jpg" alt="Foto 34 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 34</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(35).jpg" alt="Foto 35 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 35</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(36).jpg" alt="Foto 36 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 36</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(37).jpg" alt="Foto 37 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 37</div>
+                    </div>
+                    <div class="photo-container">
+                        <img src="images/foto(38).jpg" alt="Foto 38 do Sítio Vovó Esperança">
+                        <div class="caption">Vista 38</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato" class="contact-info">
+                <h2>Entre em Contato</h2>
+                <p><strong>Telefone/WhatsApp:</strong> 31 97252-8475</p>
+                <a href="https://wa.me/5531972528475?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20Sítio%20Vovó%20Esperança." class="whatsapp-link" target="_blank">
+                    Chamar no WhatsApp
+                </a>
+            </section>
+
+            <section id="localizacao" class="location-info">
+                <h2>Nossa Localização</h2>
+                <p><strong>Endereço:</strong> Rua Imperatriz de Leopoldina, 42 - Chácara Santa Inês, Santa Luzia - MG</p>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3753.500419103878!2d-43.89149932383889!3d-19.81948093616878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa691708a400001%3A0x2978789c5fca7698!2sR.%20Imperatriz%20Leopoldina%2C%2042%20-%20Ch%C3%A1caras%20Santa%20Ines%2C%20Santa%20Luzia%20-%20MG%2C%2033045-220!5e0!3m2!1spt-BR!2sbr!4v1716650024297!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
+
+            <footer>
+                <p>© <span id="currentYear"></span> Sítio Vovó Esperança. Todos os direitos reservados.</p>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
